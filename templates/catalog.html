@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог продукции2</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Каталог продукции</h1>
+    <div class="menu">
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+        <p>Пункт меню</p>
+    </div>
+    <div class="wrap">
+        <div class="product">
+            {% for product in products %}
+                <img class="img_category" src="{{ product.img.url }}">
+                <p class="price">{{ product.price }}<span class="currency">{{ product.currency }}</span></p>
+                <span class="title">{{ product.title }}</span>
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>
