@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <title>Каталог продукции2</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
 
+{% block catalog %}
+<!-- catalog -->
 <div class="container">
     <h1>Умные колонки</h1>
     <div class="menu">
@@ -20,10 +15,10 @@
         <p>Пункт меню</p>
         <p>Пункт меню</p>
     </div>
-    <div class="wrap">
+    <div class="row">
 
         {% for product in products %}
-            <div class="product">
+            <div class="col-3">
             <img class="img_category" src="{{ product.img.url }}">
             <p class="price">{{ product.price }}<span class="currency">{{ product.currency }}</span></p>
             <span class="title">{{ product.title }}</span>
@@ -33,5 +28,4 @@
     </div>
     <div class="clear"></div>
 </div>
-</body>
-</html>
+{% endblock catalog %}
