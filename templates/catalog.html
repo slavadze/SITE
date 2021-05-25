@@ -4,7 +4,6 @@
 {% block catalog %}
 <!-- catalog -->
 <div class="container">
-    <h1>Умные колонки</h1>
     <div class="menu">
         <p>Умные колонки</p>
         <p>Наушники</p>
@@ -12,16 +11,21 @@
         <p>Клавиатуры</p>
         <p>Мониторы</p>
     </div>
+    <div class="row"><h1 class="title">Умные колонки</h1></div>
     <div class="row articles">
-
         {% for product in products %}
-            <div class="col-3">
-                <a class="link" href="{% url 'product_detail' product.pk %}"><img class="img-fluid" src="{{ product.img.url }}">
-                    <br>
-                    <br>
-                <p class="btn btn-warning"><b>{{ product.price }}<span class="currency">{{ product.currency }}</span></b></p>
-                    <br>
-                <span class="title">{{ product.title }}</span></a>
+            <div class="col-12  col-sm-6 col-lg-4 col-xl-3">
+                <a class="text-info" href="{% url 'product_detail' product.pk %}">
+                    <div class="card h-100">
+                        <img class="card-img-bottom" src="{{ product.img.url }}">
+                        <div class="card-footer">
+                        <p class="btn btn-warning"><b>{{ product.price }}<span class="currency">{{ product.currency }}</span></b></p>
+                        <br>
+
+                        <span class="card-title">{{ product.title }}</span>
+                        </div>
+                    </div>
+                </a>
             </div>
 
         {% endfor %}

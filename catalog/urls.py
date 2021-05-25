@@ -19,9 +19,12 @@ from main.views import *
 
 urlpatterns = [
 
+
     path('', catalogPage),
     path('', indexPage),
+    path('', categoryPage),
     path('product/<int:pk>/', CatalogDetailView.as_view(), name='product_detail'), # новое изменение
     path('', CatalogListView.as_view(), name='catalog'), # новое изменение
+    path('cart/product/<int:pk>/', CartDetailView.as_view(), name='cart'), # новое изменение 2
     path('admin/', admin.site.urls),
 ]

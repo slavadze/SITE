@@ -18,3 +18,9 @@ class Product(models.Model):
     # выводит title в админке / название товаров
     def __str__(self):
         return f'{self.title}'
+
+class Category(models.Model):
+
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    img = models.ImageField(upload_to='static/images/', null=True, blank=True, default='static/images/default.jpg')

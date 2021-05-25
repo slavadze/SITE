@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+ 
+{% block cart %}
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <div class="card-img-top">
+        <img class="img-fluid" src="{{ product.img.url }}">
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-7">
+      <h1>{{ product.title }}</h1>
+
+      <h2 class="btn btn-warning"><b>{{ product.price }}</b><span> {{ product.currency }} </span></h2>
+      <p class="btn btn-success"><b>
+        <!-- {{ product.availability }}  -->
+      Оформить заказ
+      </b></p>
+
+    </div>
+  </div>
+</div>
+ 
+{% endblock cart %}
