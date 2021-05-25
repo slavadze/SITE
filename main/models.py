@@ -14,3 +14,7 @@ class Product(models.Model):
     currency = models.CharField(max_length=3)
     availability = models.CharField(max_length=30, choices=available_CHOICES, default='1')
     img = models.ImageField(upload_to='static/images/', null=True, blank=True, default='static/images/default.jpg')
+
+    # выводит title в админке / название товаров
+    def __str__(self):
+        return f'{self.title}'

@@ -58,10 +58,8 @@ h1 {}
     width: 150px;
     margin: 20px 0px 20px 0px;
 }
-.price {
-    font-size: 20px;
-    font-weight: 700;
-}
+
+
 .currency {
     padding-left: 5px;
     font-size: 14px;
@@ -80,4 +78,8 @@ h1 {}
 
 
 
+
+.articles {
+  padding-bottom: 40px;
+}
 

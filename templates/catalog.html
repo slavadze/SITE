@@ -6,23 +6,24 @@
 <div class="container">
     <h1>Умные колонки</h1>
     <div class="menu">
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
-        <p>Пункт меню</p>
+        <p>Умные колонки</p>
+        <p>Наушники</p>
+        <p>Ноутбуки</p>
+        <p>Клавиатуры</p>
+        <p>Мониторы</p>
     </div>
-    <div class="row">
+    <div class="row articles">
 
         {% for product in products %}
             <div class="col-3">
-            <img class="img_category" src="{{ product.img.url }}">
-            <p class="price">{{ product.price }}<span class="currency">{{ product.currency }}</span></p>
-            <span class="title">{{ product.title }}</span>
+                <a class="link" href="{% url 'product_detail' product.pk %}"><img class="img-fluid" src="{{ product.img.url }}">
+                    <br>
+                    <br>
+                <p class="btn btn-warning"><b>{{ product.price }}<span class="currency">{{ product.currency }}</span></b></p>
+                    <br>
+                <span class="title">{{ product.title }}</span></a>
             </div>
+
         {% endfor %}
         <div class="clear"></div>
     </div>
